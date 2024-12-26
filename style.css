@@ -1,0 +1,360 @@
+/* Reset lại margin, padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Đặt không gian giữa tên cửa hàng và thanh điều hướng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .logo {
+    flex: 1; /* Làm cho phần logo chiếm không gian còn lại */
+}
+
+header nav {
+    display: flex;
+    justify-content: center; /* Căn giữa thanh điều hướng */
+    flex: 2; /* Làm cho thanh điều hướng chiếm không gian giữa */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.cart-info {
+    text-align: right;
+    flex: 1; /* Làm cho giỏ hàng chiếm không gian còn lại */
+}
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#cart-table th, #cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#cart-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.banner {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 22%;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    height: 200px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    background-image: url('./images/anh.jpg'); /* Thay đổi thành hình nền bạn muốn */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.banner-text {
+    position: relative;
+    z-index: 2; /* Đảm bảo văn bản luôn ở trên lớp nền */
+}
+
+/* Tạo hiệu ứng background in chìm */
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
+    z-index: 1; /* Đặt lớp này ở dưới lớp văn bản */
+    opacity: 0.7; /* Điều chỉnh độ mờ của nền */
+}
+
+/* Các style cho các phần tử trong banner */
+.banner h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Media Queries để cải thiện tính tương thích trên di động */
+@media (max-width: 768px) {
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .cart-info {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+nav ul li a:hover {
+    color: #e9b013; /* Vàng nhạt khi di chuột */
+}
+header {
+    padding: 20px; /* Tăng diện tích phần header */
+}
+
+nav {
+    flex: 2; /* Tăng diện tích thanh công cụ */
+}
+
+.nav-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+#contact, #store-info {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%;
+}
+
+#contact h2, #store-info h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+#contact{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contact button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+#contact button:hover {
+    background-color: #45a049;
+}
+
+#store-info p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#store-info a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#store-info a:hover {
+    text-decoration: underline;
+}
+

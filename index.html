@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cửa hàng bán hoa quả tươi">
+    <title>Cửa Hàng Hoa Quả</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cửa Hàng Hoa Quả Tươi </h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#login">Đăng nhập</a></li>
+                <li><a href="#register">Đăng ký</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+            <button onclick="searchProducts()">Tìm kiếm</button>
+        </div>
+        <div class="cart-info">
+            <p><strong>Giỏ hàng:</strong> <span id="cart-count">0</span> sản phẩm | <span id="cart-total">0 VND</span></p>
+            <button onclick="viewCart()">Xem Giỏ Hàng<i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeCartModal()">&times;</span>
+                <h2>Giỏ Hàng</h2>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu giỏ hàng sẽ được thêm động -->
+                    </tbody>
+                </table>
+                <div class="cart-total">
+                    <p>Tổng cộng: <span id="cart-total-display">0 VND</span></p>
+                </div>
+                <button onclick="checkout()">Thanh Toán</button>
+            </div>
+        </div>
+        
+    </header>
+    
+
+    <!-- Phần còn lại của trang như trước -->
+    <section id="home">
+        <div class="banner">
+            <div class="banner-text">
+            <h2>Hoa Quả Tươi Ngon, Chất Lượng Cao</h2>
+            <p>Chúng tôi cung cấp các loại hoa quả tươi ngon, từ những vườn cây chất lượng nhất.</p>
+        </div>
+    </div>
+    </section>
+
+    <section id="products">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div class="product-list">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Liên Hệ Cửa Hàng </h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Tên của bạn" id="name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email của bạn" id="email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Lời nhắn của bạn" id="message" required></textarea>
+            </div>
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cửa Hàng Hoa Quả Tươi</p>
+        <p>Email: info@hoaquat.com.vn</p>
+        <p>Điện thoại: 0123 456 789</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
