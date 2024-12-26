@@ -186,7 +186,7 @@ section {
 .banner {
     position: relative;
     text-align: center;
-    background-image: url('./images/anh.jpg'); /* Thay đổi thành hình nền bạn muốn */
+    background-image: url('./anh.jpg'); /* Thay đổi thành hình nền bạn muốn */
     background-size: cover;
     background-position: center;
     padding: 80px 20px;
